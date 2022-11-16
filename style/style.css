@@ -1,3 +1,7 @@
+/* var */
+:root {
+    --orange: #ffa500;
+}
 /* reset */
 * {
     box-sizing: border-box;
@@ -9,14 +13,89 @@
 }
 div[class^='col'] {
     height: 30px;
-    background: orange;
+    background: #ffa500;
     margin: 0 auto;
 }
+div[class^='col']:not(.col-1) {
+    z-index: 3;
+}
+div[class^='col']:hover:not(.col-1,.col-11,.col-12) {
+    animation: colAnimation 3s forwards infinite;
+    background: green;
+    cursor: pointer;   
+}
+@keyframes colAnimation {
+    0% {
+    transform: rotate(0);
+    background: var(--orange);
+
+
+    }
+    50% {
+        transform: rotate(180deg);
+        background: green;
+
+    }
+    100% {
+    transform: rotate(0);
+    background: var(--orange);
+
+
+    }
+}
+.col-2 {
+
+}
+div[class$='12'], div[class$='11'] {
+    animation: colAnimation 5s forwards infinite;
+}
 .col-1 {
-    flex: 0 1 calc(100% - 15px);   
+    flex: 0 1 calc(100% - 15px);
+    animation: col-1 5s forwards;
+    animation-delay: 5s;
+    animation-iteration-count: 2;
+/* 
+    position: relative;
+ */}
+@keyframes col-1 {
+    0% {
+        transform: translateY(0px);
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: translateY(800px);
+        background: green;
+    }
+    100% {
+        transform: translateY(0px);
+    } 
+/*  0% {
+        top: 0;
+        transform: rotate(15deg);
+    }
+    50% {
+        top: 800px;
+        transform: rotate(0deg);
+    }
+    100% {
+        top: 0;
+    } */
 }
 .col-2 {
     flex: 0 1 calc(50% - 30px);
+    animation: col-2Animation 4s forwards infinite;
+}
+@keyframes col-2Animation {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(10px);
+        background: green;
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
 .col-3 {
     flex: 0 1 calc(33.33% - 30px);
