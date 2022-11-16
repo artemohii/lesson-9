@@ -6,7 +6,6 @@
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
-    margin-bottom: 30px;
 }
 div[class^='col'] {
     height: 30px;
@@ -31,7 +30,7 @@ div[class^='col'] {
     flex: 0 1 calc(16.66% - 30px);
 }
 .col-7 {
-    flex: 0 1 calc(9.09% - 30px);
+    flex: 0 1 calc(14.28% - 30px);
 }
 .col-8 {
     flex: 0 1 calc(12.5% - 30px);
