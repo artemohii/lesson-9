@@ -10,9 +10,10 @@
 div[class^='col'] {
     height: 30px;
     background: orange;
+    margin: 0 auto;
 }
 .col-1 {
-    flex: 0 1 100%;   
+    flex: 0 1 calc(100% - 15px);   
 }
 .col-2 {
     flex: 0 1 calc(50% - 30px);
